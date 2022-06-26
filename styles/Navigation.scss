@@ -1,0 +1,30 @@
+.Navigation {
+  width: 100%;
+  background: $white;
+  border-bottom: 1px solid $black;
+
+  ul {
+    padding: 0 6vw;
+    height: 80px;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .feedLink {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: -3px;
+
+    img {
+      margin-right: 0.2em;
+      height: 1em;
+      width: auto;
+    }
+  }
+}
