@@ -15,6 +15,7 @@ a {
 }
 
 .button {
+  cursor: pointer;
   padding: 12px 24px;
   border-radius: 2px;
   background: $gray;
@@ -25,4 +26,22 @@ a {
   background: $primary;
   border: 1px solid $primaryDark;
   color: $white;
+}
+
+.buttonGoogle {
+  background-color: $white;
+  background-image: url("/images/google.svg");
+  background-repeat: no-repeat;
+  background-position: left 20px center;
+  padding-left: 50px;
+  background-size: 1.2em;
+}
+
+.container {
+  margin: 40px auto;
+  max-width: 800px;
+  background: $white;
+  padding: 20px;
+  border-radius: 2px;
+  border: 1px solid $black;
 }
