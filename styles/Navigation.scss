@@ -27,4 +27,19 @@
       width: auto;
     }
   }
+
+  .adminLinks {
+    display: inline-flex;
+    align-items: center;
+
+    .profilePic {
+      margin-left: 1em;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid $black;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
 }

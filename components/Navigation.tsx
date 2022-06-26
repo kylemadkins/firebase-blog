@@ -5,7 +5,10 @@ interface User {
 }
 
 export default function Navigation() {
-  const user: User = { photoUrl: null };
+  const user: User = {
+    photoUrl:
+      "https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg"
+  };
   const username: string | null = { username: null }.username;
 
   return (
@@ -20,28 +23,22 @@ export default function Navigation() {
           </Link>
         </li>
         {username && (
-          <>
-            <li>
-              <Link href="/admin">
-                <a>Create Post</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={`/${username}`}>
-                <a className="profilePic">
-                  <img
-                    src={user?.photoUrl}
-                    alt={`${username}'s profile picture`}
-                  />
-                </a>
-              </Link>
-            </li>
-          </>
+          <li className="adminLinks">
+            <Link href="/admin">
+              <a className="button buttonPrimary">Create Post</a>
+            </Link>
+            <Link href={`/${username}`}>
+              <a
+                className="profilePic"
+                style={{ backgroundImage: `url(${user?.photoUrl})` }}
+              />
+            </Link>
+          </li>
         )}
         {!username && (
           <li>
             <Link href="/login">
-              <a className="button button-primary">Login</a>
+              <a className="button buttonPrimary">Login</a>
             </Link>
           </li>
         )}

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "IBM Plex Sans Condensed", sans-serif;
   font-size: 16px;
@@ -16,7 +20,7 @@ a {
   font-weight: 700;
 }
 
-.button-primary {
+.buttonPrimary {
   background: $primary;
   border: 1px solid $primaryDark;
   color: $white;
