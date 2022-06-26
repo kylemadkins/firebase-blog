@@ -1,15 +1,11 @@
 import Link from "next/link";
-
-interface User {
-  photoUrl: string | null;
-}
+import { useContext } from "react";
+import { AuthContext } from "../lib/AuthContext";
+import { User } from "../lib/types";
 
 export default function Navigation() {
-  const user: User = {
-    photoUrl:
-      "https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg"
-  };
-  const username: string | null = { username: null }.username;
+  const { user, username }: { user: User; username: string | null } =
+    useContext(AuthContext);
 
   return (
     <nav className="Navigation">

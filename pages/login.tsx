@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import { AuthContext } from "../lib/AuthContext";
+import { User } from "../lib/types";
 import LoginButton from "../components/LoginButton";
 import LogoutButton from "../components/LogoutButton";
 import UsernameForm from "../components/UsernameForm";
 
 export default function LoginPage() {
-  const user = null;
-  const username = null;
+  const { user, username }: { user: User; username: string | null } =
+    useContext(AuthContext);
 
   return (
     <main className="LoginPage">
