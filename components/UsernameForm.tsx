@@ -54,7 +54,7 @@ export default function UsernameForm() {
           if (exists) {
             setStatus({
               type: Status.Error,
-              message: "Username is taken"
+              message: `${username} is taken`
             });
           } else {
             setStatus({
