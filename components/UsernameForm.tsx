@@ -93,16 +93,18 @@ export default function UsernameForm() {
             Confirm
           </button>
         </div>
-        {status ? (
-          renderMessage(status.type, status.message)
-        ) : isLoading ? (
-          <div className="inputLoading">
-            <Loader color="#009f3f" />
-            Checking availability
-          </div>
-        ) : (
-          ""
-        )}
+        <div className="inputMessageContainer">
+          {status ? (
+            renderMessage(status.type, status.message)
+          ) : isLoading ? (
+            <div className="inputLoading">
+              <Loader color="#009f3f" />
+              Checking availability
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </form>
     </section>
   );

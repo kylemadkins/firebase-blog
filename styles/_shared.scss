@@ -85,6 +85,11 @@ input {
   }
 }
 
+.inputMessageContainer {
+  height: 1em;
+  margin-top: 1em;
+}
+
 .inputError {
   font-size: 0.8em;
   color: $red;
@@ -94,7 +99,6 @@ input {
 .inputError,
 .inputLoading,
 .inputSuccess {
-  margin-top: 1em;
   font-size: 0.8em;
   display: flex;
   align-items: center;
