@@ -15,11 +15,22 @@ a {
 }
 
 .button {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
   cursor: pointer;
   padding: 12px 24px;
   border-radius: 2px;
   background: $gray;
   font-weight: 700;
+  font-size: 1em;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+
+  &[disabled] {
+    cursor: default;
+    background-color: $gray;
+    color: rgba(0, 0, 0, 0.3);
+    border-color: $gray;
+  }
 }
 
 .buttonPrimary {
@@ -35,13 +46,78 @@ a {
   background-position: left 20px center;
   padding-left: 50px;
   background-size: 1.2em;
+  border: 1px solid $black;
 }
 
 .container {
   margin: 40px auto;
   max-width: 800px;
   background: $white;
-  padding: 20px;
+  padding: 40px 20px;
   border-radius: 2px;
   border: 1px solid $black;
+}
+
+input {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 1em;
+}
+
+.inputGroup {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid $black;
+  border-radius: 2px;
+  padding: 10px;
+
+  input {
+    border: none;
+    font-size: 1em;
+    appearance: none;
+    -webkit-appearance: none;
+    margin-right: 1em;
+    display: block;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.inputError {
+  font-size: 0.8em;
+  color: $red;
+}
+
+.inputInfo,
+.inputError,
+.inputLoading,
+.inputSuccess {
+  margin-top: 1em;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+}
+
+.inputError img,
+.inputInfo img,
+.inputSuccess img {
+  margin-right: 0.5em;
+}
+
+.inputInfo {
+  color: $grayDark;
+}
+
+.inputLoading,
+.inputSuccess {
+  color: $green;
+}
+
+.inputLoading .Loader {
+  height: 1em;
+  width: 1em;
+  border-width: 2px;
+  margin-right: 0.5em;
 }

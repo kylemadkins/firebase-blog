@@ -1,0 +1,16 @@
+.UsernameForm {
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .inputGroup,
+  .inputInfo,
+  .inputError,
+  .inputSuccess,
+  .inputLoading {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+}

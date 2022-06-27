@@ -1,5 +1,4 @@
-import { auth } from "../lib/firebase";
-import { googleAuthProvider } from "../lib/firebase";
+import { auth, googleAuthProvider } from "../lib/firebase";
 
 export default function LoginButton() {
   const loginWithGoogle = async () => {
