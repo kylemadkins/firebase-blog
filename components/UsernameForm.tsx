@@ -9,7 +9,7 @@ enum Status {
   Error
 }
 
-export default function UsernameForm() {
+export default function UsernameForm({ onSubmit }) {
   const [usernameValue, setUsernameValue] = useState("");
   const [status, setStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -63,7 +63,7 @@ export default function UsernameForm() {
             });
           }
         }
-      }, 500),
+      }, 200),
     []
   );
 
@@ -76,10 +76,15 @@ export default function UsernameForm() {
     );
   };
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onSubmit(usernameValue);
+  };
+
   return (
     <section className="UsernameForm">
       <h2>Please choose a username</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="inputGroup">
           <input
             placeholder="e.g. cornbread32"

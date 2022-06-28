@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { firestore } from "../lib/firebase";
 import { AuthContext } from "../lib/AuthContext";
 import { User } from "../lib/types";
 import LoginButton from "../components/LoginButton";
@@ -9,13 +10,27 @@ export default function LoginPage() {
   const { user, username }: { user: User; username: string | null } =
     useContext(AuthContext);
 
+  const handleSubmit = async (usernameValue) => {
+    const userDoc = firestore.doc(`users/${user.uid}`);
+    const usernameDoc = firestore.doc(`usernames/${usernameValue}`);
+
+    const batch = firestore.batch();
+    batch.set(userDoc, {
+      username: usernameValue,
+      photoUrl: user.photoUrl || null,
+      displayName: user.displayName
+    });
+    batch.set(usernameDoc, { uid: user.uid });
+    await batch.commit();
+  };
+
   return (
     <main className="LoginPage">
       <div className="container">
         <h1>Welcome</h1>
         {user ? (
           !username ? (
-            <UsernameForm />
+            <UsernameForm onSubmit={handleSubmit} />
           ) : (
             <div className="LoginPage__buttons">
               <LogoutButton />
