@@ -17,7 +17,7 @@ export default function LoginPage() {
     const batch = firestore.batch();
     batch.set(userDoc, {
       username: usernameValue,
-      photoUrl: user.photoUrl || null,
+      photoURL: user.photoURL || null,
       displayName: user.displayName
     });
     batch.set(usernameDoc, { uid: user.uid });

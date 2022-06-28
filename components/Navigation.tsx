@@ -26,7 +26,7 @@ export default function Navigation() {
             <Link href={`/${username}`}>
               <a
                 className="profilePic"
-                style={{ backgroundImage: `url(${user?.photoUrl})` }}
+                style={{ backgroundImage: `url(${user?.photoURL})` }}
               />
             </Link>
           </li>
